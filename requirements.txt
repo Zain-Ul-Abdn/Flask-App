@@ -1,2 +1,6 @@
+# Make virtual environment 
+# python -m venv myenv
+# myenv\Scripts\activate
 Flask
 gunicorn
+tensorflow==2.15.0
