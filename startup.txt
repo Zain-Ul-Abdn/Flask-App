@@ -1,1 +1,8 @@
+# Activate your virtual environment (if using one)
+source myenv/bin/activate
+
+# Install dependencies from requirements.txt
+pip install -r requirements.txt
+
+# Start your app (replace 'app.py' with the entry point of your app)
 gunicorn --bind=0.0.0.0 --timeout 600 server:app
