@@ -9,7 +9,7 @@ CORS(app)
 def index():
     if request.method == 'OPTIONS':
         response = make_response()
-        response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+        response.headers['Access-Control-Allow-Origin'] = 'https://connectifywebapp.azurewebsites.net'
         response.headers['Access-Control-Allow-Methods'] = 'POST'
         response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
         return response
@@ -20,7 +20,7 @@ def index():
             res = is_unethical(input)
             return jsonify({'response': str(res)})
         except Exception as e:
-            return jsonify({'response': "Something went wrong", 'error': str(e)}), 500
+            return jsonify({'response': "Something went wrong", 'error': e}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
